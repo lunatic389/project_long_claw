@@ -1,0 +1,9 @@
+.hero{
+  position: relative;
+  z-index: 20;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  font-family: 'MuseoModerno', cursive;
+}
