@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  padding: 0px;
+  text-align: left;
+}
+
+.footer {
+    width: 100%;
+position:relative;
+    bottom: 0;
+    z-index: 1;
+  background-color: rgba(225,225,225,0.5);
+}

@@ -5,10 +5,12 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="{% static "base/css/background_animation.css" %}">
+    <link rel="stylesheet" href="{% static "base/css/footer.css" %}">
     <link rel="stylesheet" href="{% static "base/css/navbar.css" %}">
     <link rel="stylesheet" href="{% static "base/css/pre-loader.css" %}">
     <link rel="stylesheet" href="{% static "base/css/jumbotron.css" %}">
     <link rel="stylesheet" href="{% static "base/css/infobar.css" %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap" rel="stylesheet">
   </head>
@@ -48,6 +50,7 @@
     </nav>
 
 
+
     <main>
       {% block body_block %}
       <div class="Hero">
@@ -59,10 +62,50 @@
         <div class="hero-text">
           <h1>PlasmaPal</h1><br>
           <h2>Get matched with COVID-19-recovered plasma donors</h2><br>
-          <a class="hero-btn" href="{% url "base:register"%}">Signup Now!</a>
+          <a class="hero-btn" href="{% url "base:register"%}">Sign Up Now!</a>
 
         </div>
       </div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="donor">
+              <div class="inner">
+                  <h1>How your Plasma could save someone's life</h1>
+                  <br>
+                  <h3>According to the FDA, If you have fully recovered from COVID-19,
+                      you may be able to help patients currently fighting the infection
+                      by donating your plasma. Because you fought the infection, your plasma
+                      now contains COVID-19 antibodies. These antibodies provided one way
+                      for your immune system to fight the virus when you were sick, so
+                      your plasma may be able to be used to help others fight off the disease.</h3>
+                      <br>
+                      <a href="https://www.fda.gov/emergency-preparedness-and-response/coronavirus-disease-2019-covid-19/donate-covid-19-plasma" target="_blank">Learn more by clicking here</a>
+                      <br><br>
+              </div>
+          </div>
+
+<div class="patient">
+              <div class="inner">
+                  <h1>I Haven’t Had COVID-19. What Can I Do to Help?</h2>
+                      <br>
+                      <h3>You can consider donating blood! One blood donation
+                          can save up to three lives. The COVID-19 pandemic has
+                          caused unprecedented challenges to the U.S. blood supply.
+                           Donor centers have experienced a dramatic reduction in
+                           donations due to the implementation of social distancing
+                           and the cancellation of blood drives. Blood is needed
+                           every day to provide lifesaving treatments to a variety
+                           of patients. You can help ensure that blood continues
+                           to be available for patients by finding a blood donor
+                           center near you to schedule your donation!</h3>
+              </div>
+
+</div>
+
+
+
+
+
+
       <div class="info-box">
         <div class="box1 box">
             <p>
@@ -97,12 +140,53 @@
       <br>
       <br>
       <br>
+
+
+      <div class="donor">
+          <div class="inner">
+              <h1 style="text-align: center"> For Donors</h1>
+              <br>
+              <h2>If you are a COVID-19 recovered patient, your plasma could help treat someone affected by the virus!</h3>
+              <br>
+              <h3>1. Sign up and fill out all your information accurately.</h2>
+              <br>
+              <h3>2. Upload your COVID-19 test results</h2>
+              <br>
+              <h3>3. Patients who are a match will request to match with you.</h2>
+              <br>
+              <h3>4. We will reach out to you with the patient information so you can reach out to them and help them battle COVID-19!</h2>
+
+
+          </div>
+
+      </div>
+      <div class="patient">
+          <div class="inner">
+              <h1>For Patients</h1>
+              <h2>If you are a patient battling COVID-19, a recovered patient's plasma could help you defeat the virus!</h3>
+              <br>
+              <h3>1. Sign up and fill out all your information accurately.</h2>
+              <br>
+              <h3>2. Use the search function to look up eligible donors</h2>
+              <br>
+              <h3>3. You can request to be matched with a donor.</h2>
+              <br>
+              <h3>4. We will reach out to the donor with your information so they can reach out to you and help you fight COVID-19!</h2>
+              <br>
+          </div>
+
+      </div>
+
       {% endblock %}
     </main>
 
 
 
-
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <span class="text-muted"><p>© PlasmaPal 2020</p></span>
+      </div>
+    </footer>
 
 
 
