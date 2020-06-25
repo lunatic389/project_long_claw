@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static "base/css/navbar.css" %}">
     <link rel="stylesheet" href="{% static "base/css/pre-loader.css" %}">
     <link rel="stylesheet" href="{% static "base/css/jumbotron.css" %}">
+    <link rel="stylesheet" href="{% static "base/css/infobar.css" %}">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap" rel="stylesheet">
   </head>
@@ -15,86 +16,129 @@
   <body>
 
 
-<div class="loader-Wrapper">
-  <div class = "centered">
-  	<div class = "blob-1"></div>
-  	<div class = "blob-2"></div>
-  </div>
+    <div class="loader-Wrapper">
+     <div class = "centered">
+  	   <div class = "blob-1"></div>
+  	   <div class = "blob-2"></div>
+     </div>
 
-</div>
+     </div>
 
 
 
-<nav>
-    <div class="logo">
+    <nav id="navbar">
+     <div class="logo">
       <h4>PlasmaPal</h4>
-    </div>
-    <ul class="navlinks">
-      <li><a href="{% url "base:home"%}">Home</a></li>
-      <li><a href="{% url "base:search"%}">Search</a></li>
-      <li><a href="{% url "base:register"%}">Signup</a></li>
-      <li><a href="{% url "base:user_login"%}">Login</a></li>
-      <li><a href="{% url "base:contact"%}">Contact Us</a></li>
-    </ul>
+     </div>
+     <ul class="navlinks">
+       <li><a id="navlinks" href="{% url "base:home"%}">Home</a></li>
+       <li><a id="navlinks" href="{% url "base:search"%}">Search</a></li>
+       <li><a id="navlinks" href="{% url "base:register"%}">Signup</a></li>
+       <li><a id="navlinks" href="{% url "base:user_login"%}">Login</a></li>
+       <li><a id="navlinks" href="{% url "base:contact"%}">Contact Us</a></li>
+     </ul>
 
-    <div class="burger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
+     <div class="burger">
+       <div class="line1"></div>
+       <div class="line2"></div>
+       <div class="line3"></div>
 
 
-    </div>
-</nav>
+     </div>
+    </nav>
 
-<div class="hero">
 
-  <div class="img-container" >
-    <div class="inner-container" style="  background-image: url('{% static "base/img/hero/hero-sample.jpg" %}')">
+    <main>
       {% block body_block %}
-      <h1>{{print}}</h1>
+      <div class="Hero">
+          <div class="hero-img" style="">
+            <p><img src="{% static "base/img/hero/hero.png" %}"alt=""></p>
+
+          </div>
+
+        <div class="hero-text">
+          <h1>Hero Heading</h1><br>
+          <h2>sub text goes here sdfmsdksk</h2><br>
+          <a class="hero-btn" href="{% url "base:register"%}">Signup</a>
+
+        </div>
+      </div>
+      <div class="info-box">
+        <div class="box1 box">
+            <p>
+              <img id="icon" src="{% static "base/img/icon/002.png" %}" alt="">
+            </p>
+            <h1>For Donar</h1>
+            <p>some caodsvndkv kdsvsdnvdnvsdvsvsdkvnk sdkvmskvsk  sdmvsm aWeiohgierajgvJ SIOJFiwjggvbJ vsdVNDBsiBN fdnbidfnb </p><br>
+            <a href="#">Learn more</a>
+          </div>
+        <div class="box2 box">
+          <p>
+            <img id="icon" src="{% static "base/img/icon/003.png" %}" alt="">
+          </p>
+          <h1>For Patient</h1>
+          <p>some caodsvndkv kdsvsdnvdnvsdvsvsdkvnk sdkvmskvsk  sdmvsm aWeiohgierajgvJ SIOJFiwjggvbJ vsdVNDBsiBN fdnbidfnb </p><br>
+          <a href="#">Learn more</a>
+        </div>
+        <div class="box3 box">
+          <p><img id="icon" src="{% static "base/img/icon/001.png" %}" alt=""></p>
+          <h1>About Us</h1>
+          <p>some caodsvndkv kdsvsdnvdnvsdvsvsdkvnk sdkvmskvsk  sdmvsm aWeiohgierajgvJ SIOJFiwjggvbJ vsdVNDBsiBN fdnbidfnb </p><br>
+          <a href="#">Learn more</a>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
       {% endblock %}
-      <h2>consectetur adipiscing elit, serfd dgo eiusmod tempor incididunt ut ore et dolore magna aliqua</h2>
-      <a class="btn Jlink" href="#">Click Here</a>
-
-    </div>
-
-  </div>
-
-
-</div>
-
-
-<div class="background">
-
-
-
-  <div class="waveWrapper waveAnimation">
-    <div class="waveWrapperInner bgTop">
-      <div class="wave waveTop" style="background-image: url('{% static "base/img/background/wave-bot.png" %}')"></div>
-    </div>
-    <div class="waveWrapperInner bgMiddle">
-      <div class="wave waveMiddle" style="background-image: url('{% static "base/img/background/wave-mid.png" %}')"></div>
-    </div>
-    <div class="waveWrapperInner bgBottom">
-      <div class="wave waveBottom" style="background-image: url('{% static "base/img/background/wave-top.png" %}')"></div>
-    </div>
-  </div>
-
-</div>
+    </main>
 
 
 
 
-<script>
+
+
+
+      <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+     </div >
+
+
+
+
+
+
+
+
+
+
+
+
+     <script>
   $(window).on("load",function (){
     $(".loader-Wrapper").fadeOut("slow");
   });
 
 </script>
 
-<script src="{% static "base/js/navbar.js" %}">
+      <script src="{% static "base/js/navbar.js" %}">
 
-</script>
+      </script>
 
   </body>
 </html>

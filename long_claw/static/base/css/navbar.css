@@ -11,9 +11,10 @@ nav{
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-  background-color: #FB6C1F;
-  z-index: 20;
-  font-family: 'MuseoModerno', cursive;
+  background-color: #fff;
+  z-index: 10;
+  border-bottom: 5px solid #890b0b;
+
 }
 
 .logo{
@@ -21,15 +22,18 @@ nav{
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
+  font-family: 'MuseoModerno', cursive;
+
 }
 
 .navlinks{
   display: flex;
   justify-content: space-around;
-  width:45%;
+  width:30%;
+  font-family: 'Roboto', sans-serif;
 }
 
-.navlinks a{
+#navlinks {
   color: #112957;
   text-decoration: none;
   letter-spacing: 3px;
@@ -51,13 +55,27 @@ nav{
 .burger div{
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: #8f94fb;
   margin: 5px;
   transition: all 0.3s ease;
 
 }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky + .content {
+  padding-top: 60px;
+}
 
-@media screen and (max-width:1000px) {
+#navlinks:hover,#navlinks:active{
+  border: 2px solid #890b0b;;
+  padding: 2px;
+  border-radius: 7px;
+}
+
+@media screen and (max-width:1024px) {
 
   .navlinks{width: 60%;}
 
@@ -72,7 +90,7 @@ nav{
     right: 0px;
     height:92vh;
     top:8vh;
-    background-color:  #FB6C1F;
+    background-color:#fff;
     display: flex;
     flex-direction: column;
     align-items: center;
