@@ -12,7 +12,7 @@ nav{
   align-items: center;
   min-height: 8vh;
   background-color: #fff;
-  z-index: 2;
+  z-index: 10;
   border-bottom: 5px solid #890b0b;
 
 }
@@ -29,7 +29,7 @@ nav{
 .navlinks{
   display: flex;
   justify-content: space-around;
-  width:30%;
+  width:40%;
   font-family: 'Roboto', sans-serif;
 }
 

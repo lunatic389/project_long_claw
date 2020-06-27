@@ -39,7 +39,7 @@
 
 .hero-text h1{
 
-  font-size: 4em;
+  font-size: 5em;
 
 }
 .hero-text h2{
@@ -52,7 +52,7 @@
   text-decoration: none;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:771px) {
   .Hero{
     display: grid;
     grid-gap: 0px;
@@ -61,16 +61,15 @@
     position: relative;
     z-index: 1;
     top:100px;
-    width:90%;
+    width:100%;
     margin:auto;
     height:auto;
     border: 7px solid #f74c4c;
     border-radius: 25px;
   }
   .hero-text{
-    margin: auto;
+    background-color: black;
     text-align: center;
-    padding: 5%;
   }
   .hero-img img{
     margin-top: 20%;

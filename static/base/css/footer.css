@@ -6,7 +6,7 @@
 
 .footer {
     width: 100%;
-position:relative;
+    position: fixed;
     bottom: 0;
     z-index: 1;
   background-color: rgba(225,225,225,0.5);

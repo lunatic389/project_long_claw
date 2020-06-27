@@ -3,9 +3,11 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title></title>
     <link rel="stylesheet" href="{% static "base/css/background_animation.css" %}">
     <link rel="stylesheet" href="{% static "base/css/footer.css" %}">
+    <link rel="stylesheet" href="{% static "base/css/font.css" %}">
     <link rel="stylesheet" href="{% static "base/css/navbar.css" %}">
     <link rel="stylesheet" href="{% static "base/css/pre-loader.css" %}">
     <link rel="stylesheet" href="{% static "base/css/jumbotron.css" %}">
@@ -60,14 +62,14 @@
           </div>
 
         <div class="hero-text">
-          <h1>PlasmaPal</h1><br>
+          <h5 data-shadow='PLASMAPAL'>PLASMAPAL</h5><br>
           <h2>Get matched with COVID-19-recovered plasma donors</h2><br>
           <a class="hero-btn" href="{% url "base:register"%}">Sign Up Now!</a>
 
         </div>
       </div>
 <br><br><br><br><br><br><br><br><br><br><br><br>
-      <div class="donor">
+      <div class="q1">
               <div class="inner">
                   <h1>How your Plasma could save someone's life</h1>
                   <br>
@@ -83,7 +85,7 @@
               </div>
           </div>
 
-<div class="patient">
+<div class="q2">
               <div class="inner">
                   <h1>I Haven’t Had COVID-19. What Can I Do to Help?</h2>
                       <br>
