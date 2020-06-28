@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib.auth import authenticate,login,logout
+from base.models import UserProfileInfo
 
 def index(request):
     return render(request,'base/home.html',context={"print":"hompage"})
@@ -52,6 +53,8 @@ def user_login(request):
                 p=UserProfileInfo.objects.get(user_id=user)
                 if p.registered_as=="Patient":
                     return HttpResponseRedirect(reverse('base:search'))
+                elif p.registered_as=="Donor":
+                    return HttpResponseRedirect(reverse('base:request'))
 
                 # return HttpResponse("login sucessful")
 
@@ -65,4 +68,17 @@ def user_login(request):
         return render(request,'base/user_login.html',{})
 
 def search(request):
-    return render(request,'base/search.html',context={"print":"search page"})
+    searched=True
+    if request.method == 'POST':
+        searched=False
+        bT = request.POST.get('blood_type')
+        object = UserProfileInfo.objects.all().filter(blood_type=bT)
+
+        return render(request,'base/search.html',context={"matches":object})
+    else:
+        return render(request,'base/search.html',context={"searched":searched})
+
+
+
+def requests(request):
+    return render(request,'base/requests.html',context={"print":"requests page"})

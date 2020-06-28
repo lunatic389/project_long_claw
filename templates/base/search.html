@@ -1,4 +1,57 @@
 {% extends "base/home.html" %}
 {% block body_block %}
-<h1>{{print}}</h1>
+<div class="search">
+  {% if searched %}
+    <form action="{% url 'base:search' %}" method="post">
+      {% csrf_token %}
+      <label for="blood_type">Blood Type:</label>
+      <select name="blood_type">
+        <option disabled selected>Select your blood type:</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+    <input type="submit" name="" value="Search">
+  </form>
+
+  {% else %}
+    {% if matches%}
+      <table>
+        <thead>
+          <th>name</th>
+          <th>blood type</th>
+          <th>location</th>
+      </thead>
+      {% for x in matches %}
+      <tr>
+        <td>{{x.user}}</td>
+        <td>{{x.blood_type}}</td>
+        <td>{{x.resident_state}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>no records found</p>
+  {% endif %}
+{% endif %}
+
+
+</div>
+
+
+
+
+
+<style>
+  .search{
+    position: relative;
+    z-index:40;
+  }
+
+</style>
 {% endblock %}

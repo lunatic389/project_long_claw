@@ -1,4 +1,25 @@
 {% extends "base/home.html" %}
 {% block body_block %}
-<h1>{{print}}</h1>
+<div class="login">
+  <h1>Please Login</h1>
+  <form action="{% url 'base:user_login' %}" method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" placeholder="Enter Username">
+    <label for="password">Password:</label>
+    <input type="password" name="password">
+
+    <input type="submit" name="" value="Login">
+
+  </form>
+
+</div>
+
+<style>
+  .login{
+    position: relative;
+    z-index:40;
+  }
+
+</style>
 {% endblock %}
