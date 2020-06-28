@@ -40,7 +40,29 @@ def register(request):
                               'registered':registered})
 
 def user_login(request):
-    return render(request,'base/user_login.html',context={"print":"login page"})
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username,password=password)
+
+        if user:
+            if user.is_active:
+                login(request,user)
+                p=UserProfileInfo.objects.get(user_id=user)
+                if p.registered_as=="Patient":
+                    return HttpResponseRedirect(reverse('base:search'))
+
+                # return HttpResponse("login sucessful")
+
+
+            else:
+                return HttpResponse("account not active")
+        else:
+            print("fail")
+            return HttpResponse("Invalid login")
+    else:
+        return render(request,'base/user_login.html',{})
 
 def search(request):
-    return render(request,'base/user_login.html',context={"print":"search page"})
+    return render(request,'base/search.html',context={"print":"search page"})
