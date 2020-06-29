@@ -6,8 +6,9 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib.auth import authenticate,login,logout
 from base.models import UserProfileInfo
 
+
 def index(request):
-    return render(request,'base/home.html',context={"print":"hompage"})
+    return render(request,'base/home.html',context={})
 # Create your views here.
 def contact(request):
     return render(request,'base/contact_us.html',context={"print":"contact us page"})
@@ -67,18 +68,34 @@ def user_login(request):
     else:
         return render(request,'base/user_login.html',{})
 
+@login_required
 def search(request):
-    searched=True
-    if request.method == 'POST':
-        searched=False
-        bT = request.POST.get('blood_type')
-        object = UserProfileInfo.objects.all().filter(blood_type=bT)
-
-        return render(request,'base/search.html',context={"matches":object})
+    current_user=UserProfileInfo.objects.get(user_id=request.user)
+    object = UserProfileInfo.objects.all().filter(blood_type=current_user.blood_type)
+    object = object.exclude(user_id=request.user)
+    object = object.exclude(registered_as="Patient")
+    match=False
+    if object:
+        match=True
+        noOfDonar=len(object)
+        if request.method=="POST":
+            current_user.requested=True
+            current_user.save()
+            return render(request,'base/search.html',context={"matches":match,
+                                                          "Donar":noOfDonar,"r":current_user.requested})
+        else:
+            return render(request,'base/search.html',context={"matches":match,
+                                                          "Donar":noOfDonar,"r":current_user.requested})
     else:
-        return render(request,'base/search.html',context={"searched":searched})
+        return render(request,'base/search.html',context={"matches":match,
+                                                      "Donar":noOfDonar,"r":current_user.requested})
 
 
-
+@login_required
 def requests(request):
-    return render(request,'base/requests.html',context={"print":"requests page"})
+    current_user=UserProfileInfo.objects.get(user_id=request.user)
+    object = UserProfileInfo.objects.all().filter(blood_type=current_user.blood_type)
+    object = object.exclude(user_id=request.user)
+    object = object.exclude(registered_as="Donar")
+    object = object.exclude(requested=False)
+    return render(request,'base/requests.html',context={"request":object})

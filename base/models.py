@@ -22,6 +22,7 @@ class UserProfileInfo(models.Model):
     dob=models.DateField(blank=True,null=True)
     phone_number=models.CharField(max_length=10)
     registered_as=models.CharField(max_length=7,choices=account_type,default='Donar')
+    requested = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.username

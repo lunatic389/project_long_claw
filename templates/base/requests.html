@@ -1,4 +1,36 @@
 {% extends "base/home.html" %}
 {% block body_block %}
-<h1>{{print}}</h1>
+<div class="request">
+{% if request %}
+<h3>following are the requests</h3>
+<table>
+  <thead>
+    <th>name</th>
+    <th>email</th>
+    <th>phone no</th>
+    <th>area</th>
+  </thead>
+  {% for x in request %}
+  <tr>
+    <td>{{x.user}}</td>
+    <!-- <td>{{email}}</td> -->
+    <td>{{x.phone_number}}</td>
+    <td>{{x.resident_state}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>no requests </p>
+{% endif %}
+</div>
+
+
+<style>
+  .request{
+    text-align:center;
+    position: relative;
+    z-index:40;
+  }
+
+</style>
 {% endblock %}
