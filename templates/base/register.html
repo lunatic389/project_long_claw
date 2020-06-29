@@ -1,12 +1,16 @@
 {% extends "base/home.html" %}
 {% block body_block %}
 
+
+
+
+
 <div class="form">
   {% if registered %}
-    <h1>Thank you for registering!!</h1>
+    <h1>Thank you for registering!</h1>
     {% else %}
-    <h1>Register Here!!</h1>
-    <h3>Fill out the form:</h3>
+    <h1>Register Here</h1>
+    <br>
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{user_form.as_p}}
@@ -19,8 +23,20 @@
 </div>
 <style>
   .form{
+      line-height: 1.8;
+    text-indent: 5px;
+    letter-spacing: 3px;
+    font-family: 'MuseoModerno', sans-serif;
     position: relative;
     z-index:40;
+    background: #707bb185;
+    max-width: 470px;
+    margin:  auto ;
+    padding: 50px;
+    margin-top:100px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
   }
 
 </style>
