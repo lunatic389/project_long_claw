@@ -20,6 +20,7 @@
   padding: 20%;
   border-radius: 25px;
   border: 5px solid #f74c4c;
+  text-shadow: -5px 3px 6px black;
 
 }
 .box2{
@@ -27,6 +28,7 @@
   padding: 20%;
   border-radius: 25px;
   border: 5px solid #f74c4c;
+  text-shadow: -5px 3px 6px black;
 
 }
 
@@ -35,6 +37,8 @@
   padding: 20%;
   border-radius: 25px;
   border: 5px solid #f74c4c;
+  text-shadow: -5px 3px 6px black;
+
 }
 
 #icon{
@@ -79,7 +83,7 @@
     z-index: 1;
     width:90%;
     margin: auto;
-    height: 360px;
+    height: auto;
     display: flex;
     padding: 3%;
     border-radius: 20px;
