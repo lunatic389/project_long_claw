@@ -13,14 +13,14 @@
   {% for x in request %}
   <tr>
     <td>{{x.user}}</td>
-    <!-- <td>{{email}}</td> -->
+    <td>{{x}}</td>
     <td>{{x.phone_number}}</td>
     <td>{{x.resident_state}}</td>
   </tr>
   {% endfor %}
 </table>
 {% else %}
-<p>no requests </p>
+<p>No patients at present we will contact you if any requests occurs</p>
 {% endif %}
 </div>
 

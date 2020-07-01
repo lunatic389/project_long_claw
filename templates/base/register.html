@@ -15,7 +15,8 @@
       {% csrf_token %}
       {{user_form.as_p}}
       {{profile_form.as_p}}
-      <input type="submit" name="" value="register">
+      <br>
+      <input id="button" type="submit" name="" value="Register">
 
     </form>
 
@@ -24,20 +25,33 @@
 <style>
   .form{
       line-height: 1.8;
-    text-indent: 5px;
     letter-spacing: 3px;
     font-family: 'MuseoModerno', sans-serif;
     position: relative;
-    z-index:40;
+    z-index:1;
     background: #707bb185;
-    max-width: 470px;
+    max-width: 50%;
     margin:  auto ;
-    padding: 50px;
+    padding: 8%;
     margin-top:100px;
-    text-align: center;
+    text-align:justify;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-
+    border: 7px solid #890b0b;
+    border-radius: 25px;
   }
+  #button{
+    color: black;
+    font-size: 1.5em ;
+    text-decoration: none;
+    padding: 5px;
+    border-radius:10px;
+    background:none;
+  }
+  #button:hover,#button:active{
+    border: 3px solid #f74c4c;
+    border-radius: 10px;
+  }
+
 
 </style>
 {% endblock %}
