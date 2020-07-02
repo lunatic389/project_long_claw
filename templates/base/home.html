@@ -37,12 +37,14 @@
      </div>
      <ul class="navlinks">
        <li><a id="navlinks" href="{% url "base:home"%}">Home</a></li>
-       <li><a id="navlinks" href="{% url "base:register"%}">Signup</a></li>
-       {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
+       <li><a id="navlinks" href="{% url "base:search"%}">Search</a></li>
+
 
          <li><a id="navlinks" href="{% url "base:logout"%}">Logout</a></li>
 
        {% else %}
+         <li><a id="navlinks" href="{% url "base:register"%}">Register</a></li>
          <li><a id="navlinks" href="{% url "base:user_login"%}">Login</a></li>
        {% endif %}
 
