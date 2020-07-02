@@ -10,7 +10,7 @@
   margin:auto;
   /* background-color: rgba(0, 0, 0, 0.3); */
   height: auto;
-  border: 7px solid #890b0b;
+  border: 7px solid #e0414b;
   border-radius: 25px;
 
 }
@@ -26,8 +26,7 @@
 .hero-img img{
   /* position: relative; */
   width: 90%;
-  height: auto;
-  margin-top: 10%;
+  margin-top: -10%;
 }
 
 .hero-text{
@@ -64,7 +63,7 @@
     width:100%;
     margin:auto;
     height:auto;
-    border: 7px solid #f74c4c;
+    border: 7px solid #e0414b;
     border-radius: 25px;
   }
   .hero-text{
