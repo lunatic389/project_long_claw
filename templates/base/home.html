@@ -16,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -39,9 +40,7 @@
        <li><a id="navlinks" href="{% url "base:home"%}">Home</a></li>
         {% if user.is_authenticated %}
        <li><a id="navlinks" href="{% url "base:search"%}">Search</a></li>
-
-
-         <li><a id="navlinks" href="{% url "base:logout"%}">Logout</a></li>
+       <li><a id="navlinks" href="{% url "base:logout"%}">Logout</a></li>
 
        {% else %}
          <li><a id="navlinks" href="{% url "base:register"%}">Register</a></li>
@@ -126,7 +125,7 @@
             <br>
             <h1>For Donors</h1>
             <br>
-            <a href="#donor">Learn more</a>
+            <a href="#donors">Learn more</a>
           </div>
         <div class="box2 box">
           <p>
@@ -135,7 +134,7 @@
           <br>
           <h1>For Patients</h1>
           <br>
-          <a href="#patient">Learn more</a>
+          <a href="#patients">Learn more</a>
         </div>
         <div class="box3 box">
           <p><img id="icon" src="{% static "base/img/icon/001.png" %}" alt=""></p>
@@ -153,7 +152,7 @@
       <br>
 
 
-      <div class="donor">
+      <div class="donor" id="donors">
           <div class="inner">
               <h1 style="text-align: center"> For Donors</h1>
               <br>
@@ -171,7 +170,7 @@
           </div>
 
       </div>
-      <div class="patient">
+      <div class="patient" id="patients">
           <div class="inner">
               <h1>For Patients</h1>
               <h2>If you are a patient battling COVID-19, a recovered patient's plasma could help you defeat the virus!</h3>

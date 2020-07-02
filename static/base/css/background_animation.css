@@ -20,14 +20,14 @@ body{
 
 .context h1{
     text-align: center;
-    color: #fff;
+    color: white;
     font-size: 50px;
 }
 
 
 .area{
-    background: #aee2ff;
-    background: -webkit-linear-gradient(to left, #aee2ff, #aee2ff);
+    background: #8ed5fd;
+    background: -webkit-linear-gradient(to left, #8ed5fd, #8ed5fd);
     width: 100%;
     height:100vh;
     position: sticky;

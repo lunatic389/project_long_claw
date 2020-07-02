@@ -3,7 +3,7 @@
 <div class="request">
 {% if request %}
 <h3>Requests:</h3>
-<table>
+<table border=1px>
   <thead>
     <th>name</th>
     <th>email</th>
@@ -20,17 +20,29 @@
   {% endfor %}
 </table>
 {% else %}
-<p>No patients found. We will contact you if you have a request</p>
+<p>No patients found. We will contact you if you have a request!</p>
 {% endif %}
 </div>
 
 
 <style>
-  .request{
-    text-align:center;
-    position: relative;
-    z-index:40;
-  }
 
-</style>
+        .request{
+            line-height: 1.8;
+          font-family: 'Roboto', sans-serif;
+          position: relative;
+          z-index:1;
+          background: #707bb185;
+          max-width: 50%;
+          margin:  auto ;
+          padding: 2%;
+          margin-top:100px;
+          text-align: center;
+          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+          border: 7px solid #e0414b;
+          border-radius: 25px;
+        }
+        </style>
+
+
 {% endblock %}
