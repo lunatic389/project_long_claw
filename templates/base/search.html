@@ -2,15 +2,15 @@
 {% block body_block %}
 <div class="search">
 {% if matches %}
-  <h3>{{Donar}} matches found</h3>
+  <h3>{{Donor}} matches found</h3>
   {% if not r %}
-    <p>press request to send your contact info to found Donars</p>
+    <p>press request to send your contact info to the donor</p>
     <form action="{% url 'base:search' %}" method="POST">
       {% csrf_token %}
       <input type="submit" name="" value="request">
     </form>
   {% else %}
-    <p>your request is sent to Donars</p>
+    <p>your request has been sent to the donors</p>
 {% endif %}
 
 {% else %}

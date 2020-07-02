@@ -2,7 +2,7 @@
 {% block body_block %}
 <div class="request">
 {% if request %}
-<h3>following are the requests</h3>
+<h3>Requests:</h3>
 <table>
   <thead>
     <th>name</th>
@@ -20,7 +20,7 @@
   {% endfor %}
 </table>
 {% else %}
-<p>No patients at present we will contact you if any requests occurs</p>
+<p>No patients found. We will contact you if you have a request</p>
 {% endif %}
 </div>
 
