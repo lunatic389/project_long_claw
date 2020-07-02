@@ -14,19 +14,29 @@
 {% endif %}
 
 {% else %}
-<p>No matches found at present we will contact you if a Donar is found</p>
-
+<p>No matches found. We will contact you if a donor is found:)</p>
+<p>Hang in there!</p>
 {% endif %}
 
 </div>
 
 
 <style>
-  .search{
-    text-align:center;
-    position: relative;
-    z-index:40;
-  }
+    .search{
+        line-height: 1.8;
+      font-family: 'Roboto', sans-serif;
+      position: relative;
+      z-index:1;
+      background: #707bb185;
+      max-width: 50%;
+      margin:  auto ;
+      padding: 2%;
+      margin-top:100px;
+      text-align: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      border: 7px solid #890b0b;
+      border-radius: 25px;
+    }
+    </style>
 
-</style>
 {% endblock %}

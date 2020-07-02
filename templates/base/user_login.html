@@ -1,25 +1,53 @@
 {% extends "base/home.html" %}
 {% block body_block %}
 <div class="login">
-  <h1>Please Login</h1>
+  <h1>Login</h1>
+  <br><br>
   <form action="{% url 'base:user_login' %}" method="post">
     {% csrf_token %}
     <label for="username">Username:</label>
     <input type="text" name="username" placeholder="Enter Username">
+    <br>
     <label for="password">Password:</label>
-    <input type="password" name="password">
-
-    <input type="submit" name="" value="Login">
+    <input type="password" name="password" placeholder="Enter Password">
+<br><br>
+    <input id ="logbutton" type="submit" name="" value="Login">
 
   </form>
 
 </div>
 
 <style>
-  .login{
-    position: relative;
-    z-index:40;
-  }
+    .login{
+        line-height: 1.8;
+      font-family: 'MuseoModerno', sans-serif;
+      position: relative;
+      z-index:1;
+      background: #707bb185;
+      max-width: 50%;
+      margin:  auto ;
+      padding: 2%;
+      margin-top:100px;
+      text-align: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      border: 7px solid #890b0b;
+      border-radius: 25px;
+    }
+    #logbutton{
+      color: black;
+      font-size: 1.5em ;
+      text-decoration: none;
+      padding: 5px;
+      border-radius:10px;
+      background:none;
+    }
+    #logbutton:hover,#logbutton:active{
+      border: 3px solid #f74c4c;
+      border-radius: 10px;
+    }
+
+
+  </style>
 
 </style>
 {% endblock %}
