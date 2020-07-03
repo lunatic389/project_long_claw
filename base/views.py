@@ -70,25 +70,29 @@ def user_login(request):
 
 @login_required
 def search(request):
+
     current_user=UserProfileInfo.objects.get(user_id=request.user)
-    object = UserProfileInfo.objects.all().filter(blood_type=current_user.blood_type,
-                                                    resident_state=current_user.resident_state)
-    object = object.exclude(user_id=request.user)
-    object = object.exclude(registered_as="Patient")
-    match=False
-    if object:
-        match=True
-        noOfDonor=len(object)
-        if request.method=="POST":
-            current_user.requested=True
-            current_user.save()
-            return render(request,'base/search.html',context={"matches":match,
-                                                          "Donor":noOfDonor,"r":current_user.requested})
-        else:
-            return render(request,'base/search.html',context={"matches":match,
-                                                          "Donor":noOfDonor,"r":current_user.requested})
+    if current_user.registered_as=="Donor":
+        return HttpResponseRedirect(reverse('base:request'))
     else:
-        return render(request,'base/search.html',context={"matches":match})
+        object = UserProfileInfo.objects.all().filter(blood_type=current_user.blood_type,
+                                                        resident_state=current_user.resident_state)
+        object = object.exclude(user_id=request.user)
+        object = object.exclude(registered_as="Patient")
+        match=False
+        if object:
+            match=True
+            noOfDonor=len(object)
+            if request.method=="POST":
+                current_user.requested=True
+                current_user.save()
+                return render(request,'base/search.html',context={"matches":match,
+                                                              "Donor":noOfDonor,"r":current_user.requested})
+            else:
+                return render(request,'base/search.html',context={"matches":match,
+                                                              "Donor":noOfDonor,"r":current_user.requested})
+        else:
+            return render(request,'base/search.html',context={"matches":match})
 
 
 @login_required

@@ -71,7 +71,7 @@ class UserProfileInfo(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     blood_type= models.CharField(max_length=3,choices=Blood_type,default='O+')
     resident_state=models.CharField(max_length=2,choices=state_select,default='AL')
-    dob=models.DateField(blank=True,null=True)
+    date_of_birth=models.DateField(blank=True,null=True)
     phone_number=models.CharField(max_length=10)
     registered_as=models.CharField(max_length=7,choices=account_type,default='Donar')
     requested = models.BooleanField(default=False)

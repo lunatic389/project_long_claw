@@ -152,3 +152,21 @@ body{
     }
 
 }
+
+
+
+@media screen and (max-width:768px) {
+  .area{
+      background: #8ed5fd;
+      background: -webkit-linear-gradient(to left, #8ed5fd, #8ed5fd);
+      width: 100%;
+      height:100%;
+      position: sticky;
+      position: fixed;
+      top: 0;
+      width: 100%;
+
+
+  }
+
+}

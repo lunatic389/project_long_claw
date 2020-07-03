@@ -7,7 +7,7 @@
     <p>press request to send your contact info to the donor</p>
     <form action="{% url 'base:search' %}" method="POST">
       {% csrf_token %}
-      <input type="submit" name="" value="request">
+      <input id="search" type="submit" name="" value="request">
     </form>
   {% else %}
     <p>your request has been sent to the donors</p>
@@ -23,7 +23,7 @@
 
 <style>
     .search{
-        line-height: 1.8;
+      line-height: 1.8;
       font-family: 'Roboto', sans-serif;
       position: relative;
       z-index:1;
@@ -37,6 +37,27 @@
       border: 7px solid #e0414b;
       border-radius: 25px;
     }
-    </style>
+    #search{
+      color: black;
+      font-size: 1.5em ;
+      text-decoration: none;
+      padding: 5px;
+      border-radius:10px;
+      background:none;
+    }
+    #search:hover,#search:active{
+      border: 3px solid #f74c4c;
+      border-radius: 10px;
+    }
+
+    @media screen and (max-width:768px) {
+      .search{
+
+        max-width: 90%;
+
+      }
+
+    }
+  </style>
 
 {% endblock %}

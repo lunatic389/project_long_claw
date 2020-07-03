@@ -14,5 +14,5 @@ class UserForm(forms.ModelForm):
 class UserProfileInfoForm(forms.ModelForm):
     class Meta():
         model = UserProfileInfo
-        fields = ('blood_type','resident_state','dob','phone_number','registered_as')
-        help_texts={'dob':"(yyyy-mm-dd)"}
+        fields = ('blood_type','resident_state','date_of_birth','phone_number','registered_as')
+        help_texts={'date_of_birth':"(yyyy-mm-dd)"}
