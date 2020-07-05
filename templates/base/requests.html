@@ -3,12 +3,13 @@
 <div class="request">
 {% if request %}
 <h3>Requests:</h3>
-<table border=1px>
+<br>
+<table border=1px id = "table">
   <thead>
-    <th>name</th>
-    <th>email</th>
-    <th>phone no</th>
-    <th>area</th>
+      <th><h3>Name</h3></th>
+      <th><h3>Email</h3></th>
+      <th><h3>Phone Number</h3></th>
+      <th><h3>State</h3></th>
   </thead>
   {% for x in request %}
   <tr>
@@ -22,13 +23,19 @@
 {% else %}
 <p>No patients found. We will contact you if you have a request!</p>
 {% endif %}
-</div>
-
-
 <style>
+        table {
+        border-collapse: collapse;
+        margin: auto;
+        }
 
+        table, th, td {
+        padding:15px;
+        border: 2px solid black;
+        text-align: center;
+        }
         .request{
-            line-height: 1.8;
+          line-height: 1.8;
           font-family: 'Roboto', sans-serif;
           position: relative;
           z-index:1;
